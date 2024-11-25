@@ -8,7 +8,7 @@ int cyclic_right_shift(int num, int shift)
     // Считаем количество разрядов в числе
     int digits = (int)log10(num) + 1;
 
-    // Приводим сдвиг к диапазону 0 - digits - 1
+    // Приводим сдвиг к меньшему диапазону
     shift = shift % digits;
 
     // Если сдвиг нулевой, возвращаем исходное число
