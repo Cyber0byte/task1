@@ -33,3 +33,4 @@ int Task() {
     printf("Сдвиг вправо: %d", RightShift(num, shift));
     return 0;
 }
+
