@@ -5,7 +5,7 @@
 
 int cyclic_right_shift(int num, int shift)
 {
-    // Считаем количество разрядов в числе
+    // Считаем количество цифр в числе
     int digits = (int)log10(num) + 1;
 
     // Приводим сдвиг к меньшему диапазону
@@ -22,7 +22,6 @@ int cyclic_right_shift(int num, int shift)
     int last_part = num % pow10_shift;
     int first_part = num / pow10_shift;
 
-    // Сдвигаем
     return last_part * (pow(10, digits - shift)) + first_part;
 }
 
@@ -31,7 +30,6 @@ int Task()
     int num = 0;
     int shift = 0;
 
-    // Ввод числа и сдвига от пользователя
     printf("Введите число (num): ");
     scanf("%d", &num);
 
