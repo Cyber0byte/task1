@@ -13,10 +13,9 @@ int RightShift(int num, int shift) {
         return num; // Если сдвиг нулевой, возвращаем исходное число
     }
 
-    // Находим старшую и младшую часть числа
-    int pow10_shift = pow(10, shift);
-    int last_part = num % pow10_shift;
-    int first_part = num / pow10_shift;
+    int pow10_shift = pow(10, shift);  // Находим "разделитель" числа
+    int last_part = num % pow10_shift;  // Находим старшую часть числа
+    int first_part = num / pow10_shift;  // Находим младшую часть числа
 
     return last_part * (pow(10, digits - shift)) + first_part;
 }
