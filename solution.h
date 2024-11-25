@@ -1,20 +1,16 @@
 #pragma once
+#include <math.h>
 #include <stdint.h>
 #include <stdio.h>
-#include <math.h>
 
-int cyclic_right_shift(int num, int shift)
-{
-    // Считаем количество цифр в числе
-    int digits = (int)log10(num) + 1;
 
-    // Приводим сдвиг к меньшему диапазону
-    shift = shift % digits;
+int RightShift(int num, int shift) {
+    int digits = (int)log10(num) + 1; // Считаем количество цифр в числе
 
-    // Если сдвиг нулевой, возвращаем исходное число
-    if (shift == 0)
-    {
-        return num;
+    shift = shift % digits; // Приводим сдвиг к меньшему диапазону
+
+    if (shift == 0) {
+        return num; // Если сдвиг нулевой, возвращаем исходное число
     }
 
     // Находим старшую и младшую часть числа
@@ -25,8 +21,7 @@ int cyclic_right_shift(int num, int shift)
     return last_part * (pow(10, digits - shift)) + first_part;
 }
 
-int Task()
-{
+int Task() {
     int num = 0;
     int shift = 0;
 
@@ -36,6 +31,6 @@ int Task()
     printf("Введите сдвиг (shift): ");
     scanf("%d", &shift);
 
-    printf("Сдвиг вправо: %d", cyclic_right_shift(num, shift));
+    printf("Сдвиг вправо: %d", RightShift(num, shift));
     return 0;
 }

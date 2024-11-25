@@ -1,7 +1,6 @@
 #include "solution.h"
 
-int main()
-{
+int main() {
     Task();
     return 0;
 }
