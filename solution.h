@@ -5,19 +5,19 @@
 
 
 int RightShift(int num, int shift) {
-    int digits = (int)log10(num) + 1; // Считаем количество цифр в числе
+    int digits = (int)log10(num) + 1;  // Считаем количество цифр в числе
 
-    shift = shift % digits; // Приводим сдвиг к меньшему диапазону
+    shift = shift % digits;  // Приводим сдвиг к меньшему диапазону
 
     if (shift == 0) {
-        return num; // Если сдвиг нулевой, возвращаем исходное число
+        return num;  // Если сдвиг нулевой, возвращаем исходное число
     }
 
     int pow10_shift = pow(10, shift);  // Находим "разделитель" числа
     int last_part = num % pow10_shift;  // Находим старшую часть числа
     int first_part = num / pow10_shift;  // Находим младшую часть числа
 
-    return last_part * (pow(10, digits - shift)) + first_part;
+    return last_part * (pow(10, digits - shift)) + first_part;  // Соединяем обе части 
 }
 
 int Task() {
